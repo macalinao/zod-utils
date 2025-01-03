@@ -1,6 +1,6 @@
 # zod-extra
 
-Various Zod schemas and utilities. No additional dependencies and treeshakeable due to ESM.
+Various Zod schemas and utilities. No additional dependencies and tree-shakeable due to ESM.
 
 ## License
 
