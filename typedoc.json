@@ -1,0 +1,10 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "name": "Zod Utils by Ian Macalinao",
+  "out": "docs",
+  "entryPoints": ["packages/*"],
+  "entryPointStrategy": "packages",
+  "packageOptions": {
+    "entryPoints": ["src/index.ts"]
+  }
+}
