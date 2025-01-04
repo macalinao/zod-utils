@@ -11,10 +11,10 @@
     "src/",
     "README.md"
   ],
-  "repository": "github:macalinao/zod-extra",
-  "homepage": "https://github.com/macalinao/zod-extra",
+  "repository": "github:macalinao/zod-utils",
+  "homepage": "https://github.com/macalinao/zod-utils",
   "bugs": {
-    "url": "https://github.com/macalinao/zod-extra/issues"
+    "url": "https://github.com/macalinao/zod-utils/issues"
   },
   "keywords": [
     "zod",
