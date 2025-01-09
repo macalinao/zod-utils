@@ -29,14 +29,3 @@ export const zPrefixedString = <TPrefix extends string>(
     )
     .and(z.custom<PrefixedString<TPrefix>>());
 };
-
-/**
- * Validates a prefixed string that is used as an ID.
- * @param prefix
- * @returns
- */
-export const zPrefixedId = <TPrefix extends string>(
-  prefix: TPrefix,
-): z.ZodType<PrefixedString<TPrefix>> => {
-  return zPrefixedString(prefix, "ID");
-};
