@@ -1,5 +1,11 @@
 # zod-extra
 
+## 0.0.4
+
+### Patch Changes
+
+- 4e33c87: Add zCoerceBigint
+
 ## 0.0.3
 
 ### Patch Changes
