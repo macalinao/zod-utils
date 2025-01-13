@@ -1,3 +1,4 @@
+export * from "./zCoerceBigint.js";
 export * from "./zCoerceNumber.js";
 export * from "./zNonEmptyString.js";
 export * from "./zNullishNonEmptyArray.js";
