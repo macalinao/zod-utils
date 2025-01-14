@@ -25,7 +25,8 @@
     "lint-staged": "^15.3.0",
     "prettier": "^3.4.2",
     "turbo": "^2.3.3",
-    "typedoc": "^0.27.6"
+    "typedoc": "^0.27.6",
+    "typescript": "^5.7.3"
   },
   "packageManager": "pnpm@9.14.2",
   "engines": {
@@ -33,7 +34,6 @@
     "pnpm": ">=9"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,cjs,mjs,cts,mts}": "eslint --fix --cache",
-    "*.{md,json,yml,yaml,html}": "prettier --write"
+    "*.{js,jsx,ts,tsx,cjs,mjs,cts,mts,md,json,yml,yaml,html}": "prettier --write"
   }
 }

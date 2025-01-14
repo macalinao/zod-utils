@@ -1,8 +1,12 @@
-import type { CountryCode, E164Number } from "libphonenumber-js";
+import type {
+  CountryCode,
+  E164Number as LPE164Number,
+} from "libphonenumber-js";
 import { ParseError, parsePhoneNumberWithError } from "libphonenumber-js";
 import { z } from "zod";
 
-export { CountryCode, E164Number };
+export type { CountryCode };
+export type E164Number = LPE164Number;
 
 export type ZodPhoneNumber = z.ZodType<E164Number, z.ZodTypeDef, string>;
 
