@@ -2,7 +2,7 @@
   "name": "zod-libphonenumber",
   "description": "Zod schema for phone numbers using `libphonenumber-js`.",
   "author": "Ian Macalinao <me@ianm.com>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "Apache-2.0",
   "type": "module",
   "sideEffects": false,
