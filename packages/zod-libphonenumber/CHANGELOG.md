@@ -1,5 +1,11 @@
 # zod-libphonenumber
 
+## 0.1.1
+
+### Patch Changes
+
+- a35ff17: Update dependencies
+
 ## 0.1.0
 
 ### Minor Changes
