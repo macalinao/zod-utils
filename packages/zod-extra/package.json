@@ -29,7 +29,7 @@
     "@macalinao/tsconfig": "^3.1.0",
     "eslint": "^9.23.0",
     "typescript": "^5.8.2",
-    "vitest": "^3.0.9",
+    "vitest": "^3.1.1",
     "zod": "^3.24.2"
   },
   "main": "dist/index.js",
