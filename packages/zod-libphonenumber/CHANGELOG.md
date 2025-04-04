@@ -1,5 +1,11 @@
 # zod-libphonenumber
 
+## 0.1.2
+
+### Patch Changes
+
+- ca5fb94: Update dependencies
+
 ## 0.1.1
 
 ### Patch Changes
