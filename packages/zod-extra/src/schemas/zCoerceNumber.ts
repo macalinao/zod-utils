@@ -9,7 +9,7 @@ export const zCoerceNumber: z.ZodType<string | null, z.ZodTypeDef, string> = z
     if (!s) {
       return null;
     }
-    const result = parseFloat(s.split(",").join(""));
+    const result = Number.parseFloat(s.split(",").join(""));
     if (Number.isNaN(result)) {
       return null;
     }

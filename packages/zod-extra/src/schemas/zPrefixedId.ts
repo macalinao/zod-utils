@@ -1,5 +1,4 @@
 import type { z } from "zod";
-
 import type { PrefixedString } from "./zPrefixedString.js";
 import { zPrefixedString } from "./zPrefixedString.js";
 

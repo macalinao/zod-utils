@@ -1,5 +1,4 @@
-import { describe, expect, test } from "vitest";
-
+import { describe, expect, test } from "bun:test";
 import { zPrefixedString } from "./zPrefixedString.js";
 
 describe("zPrefixedString", () => {

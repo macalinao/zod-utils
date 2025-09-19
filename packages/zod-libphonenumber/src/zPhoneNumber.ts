@@ -8,7 +8,7 @@ import { z } from "zod";
 export type { CountryCode };
 export type E164Number = LPE164Number;
 
-export type ZodPhoneNumber = z.ZodType<E164Number, z.ZodTypeDef, string>;
+export type ZodPhoneNumber = z.ZodType<E164Number, string>;
 
 export type ParsePhoneNumberOptions = Parameters<
   typeof parsePhoneNumberWithError
@@ -32,7 +32,7 @@ export const zPhoneNumber = (
         const phoneNumber = parsePhoneNumberWithError(value, defaultCountry);
         if (!phoneNumber.isValid()) {
           ctx.addIssue({
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             message: "Please verify that your phone number is correct.",
           });
           return z.NEVER;
@@ -41,15 +41,14 @@ export const zPhoneNumber = (
       } catch (error: unknown) {
         if (error instanceof ParseError) {
           ctx.addIssue({
-            code: z.ZodIssueCode.custom,
+            code: "custom",
             message:
               error.message === "TOO_SHORT"
                 ? "Please verify that your phone number is correct."
                 : error.message,
           });
           return z.NEVER;
-        } else {
-          throw error;
         }
+        throw error;
       }
     });

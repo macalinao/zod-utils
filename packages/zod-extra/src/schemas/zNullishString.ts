@@ -18,5 +18,7 @@ export const zNullishString = <T extends z.ZodType<string>>(
     // null is allowed
     z.null(),
     // undefined becomes null
-    z.undefined().transform(() => null),
+    z
+      .undefined()
+      .transform(() => null),
   ]);

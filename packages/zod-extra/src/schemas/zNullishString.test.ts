@@ -1,5 +1,4 @@
-import { expect, test } from "vitest";
-
+import { expect, test } from "bun:test";
 import { zNonEmptyString } from "./zNonEmptyString.js";
 import { zNullishString } from "./zNullishString.js";
 

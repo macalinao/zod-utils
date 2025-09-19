@@ -1,5 +1,4 @@
-import { describe, expect, test } from "vitest";
-
+import { describe, expect, test } from "bun:test";
 import { zCoerceBigint } from "./zCoerceBigint.js"; // Assuming this is the correct import path
 
 describe("zCoerceBigint", () => {
