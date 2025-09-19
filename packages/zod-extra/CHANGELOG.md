@@ -1,5 +1,11 @@
 # zod-extra
 
+## 0.2.0
+
+### Minor Changes
+
+- d18f028: Update to Zod v4
+
 ## 0.1.2
 
 ### Patch Changes
