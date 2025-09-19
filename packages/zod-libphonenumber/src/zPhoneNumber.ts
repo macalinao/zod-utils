@@ -3,7 +3,7 @@ import type {
   E164Number as LPE164Number,
 } from "libphonenumber-js";
 import { ParseError, parsePhoneNumberWithError } from "libphonenumber-js";
-import { z } from "zod";
+import * as z from "zod";
 
 export type { CountryCode };
 export type E164Number = LPE164Number;

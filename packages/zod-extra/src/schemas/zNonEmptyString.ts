@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 /**
  * A Zod schema that ensures the input is a non-empty string; that is, it contains characters that are not whitespace.

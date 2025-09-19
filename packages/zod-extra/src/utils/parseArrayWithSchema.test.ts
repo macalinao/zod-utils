@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { z } from "zod";
+import * as z from "zod";
 import { parseArrayWithSchema } from "./parseArrayWithSchema.js";
 
 describe("parseArrayWithSchema", () => {

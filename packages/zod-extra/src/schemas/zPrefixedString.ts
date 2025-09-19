@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 /**
  * A string that starts with a prefix and is followed by an underscore and a string.

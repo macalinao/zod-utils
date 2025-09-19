@@ -1,4 +1,5 @@
 import { describe, expect, test } from "bun:test";
+import * as z from "zod";
 import { zPrefixedString } from "./zPrefixedString.js";
 
 describe("zPrefixedString", () => {
@@ -20,8 +21,13 @@ describe("zPrefixedString", () => {
   test("zPrefixedString with custom label", () => {
     const schema = zPrefixedString("prefix", "customLabel");
 
-    expect(
-      schema.safeParse("invalidString").error?.flatten().formErrors,
-    ).toEqual(['CustomLabel must start with the prefix "prefix_".']);
+    const error = schema.safeParse("invalidString").error;
+    expect(error).toBeDefined();
+    if (!error) {
+      throw new Error("Error is undefined");
+    }
+    expect(z.treeifyError(error).errors).toEqual([
+      'CustomLabel must start with the prefix "prefix_".',
+    ]);
   });
 });

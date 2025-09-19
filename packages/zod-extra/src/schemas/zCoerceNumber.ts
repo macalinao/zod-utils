@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 
 /**
  * A Zod schema that coerces strings to numbers, allowing for null input values.

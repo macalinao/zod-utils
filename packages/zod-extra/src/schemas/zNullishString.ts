@@ -1,7 +1,9 @@
-import { z } from "zod";
+import * as z from "zod";
 
 /**
  * A Zod schema that converts empty or undefined strings to null.
+ *
+ * This is useful for form inputs that are not required.
  */
 export const zNullishString = <TOutput, TInput extends string>(
   inner: z.ZodType<TOutput, TInput>,
