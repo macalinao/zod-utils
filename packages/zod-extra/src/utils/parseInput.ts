@@ -7,7 +7,7 @@ import type { z } from "zod";
  * @returns
  */
 export function parseInput<TInput, TOutput>(
-  schema: z.ZodType<TOutput, z.ZodTypeDef, TInput>,
+  schema: z.ZodType<TOutput, TInput>,
   input: TInput,
 ): TOutput {
   return schema.parse(input);

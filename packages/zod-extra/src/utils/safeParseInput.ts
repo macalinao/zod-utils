@@ -1,4 +1,4 @@
-import type { SafeParseReturnType, z } from "zod";
+import type { ZodSafeParseResult, z } from "zod";
 
 /**
  * Runs a Zod schema on an input and returns the safely parsed output.
@@ -7,8 +7,8 @@ import type { SafeParseReturnType, z } from "zod";
  * @returns
  */
 export function safeParseInput<TInput, TOutput>(
-  schema: z.ZodType<TOutput, z.ZodTypeDef, TInput>,
+  schema: z.ZodType<TOutput, TInput>,
   input: TInput,
-): SafeParseReturnType<TInput, TOutput> {
+): ZodSafeParseResult<TOutput> {
   return schema.safeParse(input);
 }

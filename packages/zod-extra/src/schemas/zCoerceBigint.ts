@@ -5,12 +5,9 @@ import { z } from "zod";
  *
  * This is especially useful for bigints returned from Kysely.
  */
-export const zCoerceBigint: z.ZodType<
-  bigint,
-  z.ZodUnionDef,
-  bigint | number | string
-> = z.union([
-  z.bigint(),
-  z.number().transform((n) => BigInt(n)),
-  z.coerce.bigint(),
-]);
+export const zCoerceBigint: z.ZodType<bigint, bigint | number | string> =
+  z.union([
+    z.bigint(),
+    z.number().transform((n) => BigInt(n)),
+    z.coerce.bigint<string>(),
+  ]);

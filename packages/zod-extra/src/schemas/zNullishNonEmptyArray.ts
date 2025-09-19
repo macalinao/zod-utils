@@ -1,17 +1,16 @@
 import { z } from "zod";
 
+export type NonEmptyArray<T> = [T, ...T[]];
+
 /**
  * Transforms zero length arrays to null.
  * @param inner
  * @returns
  */
-export const zRequiredNullishNonEmptyArray = <
-  TValueSchema extends z.ZodTypeAny,
->(
+export const zRequiredNullishNonEmptyArray = <TValueSchema extends z.ZodType>(
   inner: TValueSchema,
 ): z.ZodType<
-  z.arrayOutputType<TValueSchema, "atleastone"> | null,
-  z.ZodTypeDef,
+  NonEmptyArray<z.output<TValueSchema>> | null,
   z.input<TValueSchema>[]
 > =>
   z.union([
@@ -19,7 +18,10 @@ export const zRequiredNullishNonEmptyArray = <
       .array()
       .length(0)
       .transform(() => null),
-    inner.array().nonempty(),
+    inner
+      .array()
+      .nonempty()
+      .transform((v) => v as NonEmptyArray<z.output<TValueSchema>>),
   ]);
 
 /**
@@ -27,10 +29,9 @@ export const zRequiredNullishNonEmptyArray = <
  * @param inner
  * @returns
  */
-export const zNullishNonEmptyArray = <TValueSchema extends z.ZodTypeAny>(
+export const zNullishNonEmptyArray = <TValueSchema extends z.ZodType>(
   inner: TValueSchema,
 ): z.ZodType<
-  z.arrayOutputType<TValueSchema, "atleastone"> | null,
-  z.ZodTypeDef,
+  NonEmptyArray<z.output<TValueSchema>> | null,
   z.input<TValueSchema>[] | null
 > => z.union([zRequiredNullishNonEmptyArray(inner), z.null()]);

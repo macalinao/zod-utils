@@ -19,19 +19,15 @@ export class ParseArrayError extends Error {
  * @param list - The array of values to parse.
  * @returns The parsed array.
  */
-export const parseArrayWithSchema = <T extends z.ZodTypeAny>(
+export const parseArrayWithSchema = <T extends z.ZodType>(
   schema: T,
   list: unknown[],
 ): z.output<T>[] => {
   return list.map((el, i): z.output<T> => {
-    const result = schema.safeParse(el) as z.SafeParseReturnType<
-      unknown,
-      z.output<T>
-    >;
+    const result = schema.safeParse(el);
     if (!result.success) {
       throw new ParseArrayError(i, result.error);
     }
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return result.data;
   });
 };

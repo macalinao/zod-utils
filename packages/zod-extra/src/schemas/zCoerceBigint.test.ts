@@ -17,7 +17,7 @@ describe("zCoerceBigint", () => {
   test("null or empty strings", () => {
     expect(zCoerceBigint.parse("")).toEqual(0n);
     expect(() => zCoerceBigint.parse(null)).toThrowError(
-      /Expected bigint, received null/,
+      /expected bigint, received null/,
     );
   });
 });

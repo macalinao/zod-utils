@@ -3,9 +3,9 @@ import { z } from "zod";
 /**
  * A Zod schema that converts empty or undefined strings to null.
  */
-export const zNullishString = <T extends z.ZodType<string>>(
-  inner: T,
-): z.ZodType<z.output<T> | null, z.ZodTypeDef, z.input<T> | null | undefined> =>
+export const zNullishString = <TOutput, TInput extends string>(
+  inner: z.ZodType<TOutput, TInput>,
+): z.ZodType<TOutput | null, TInput | string | null | undefined> =>
   z.union([
     // preserve the inner type
     inner,
