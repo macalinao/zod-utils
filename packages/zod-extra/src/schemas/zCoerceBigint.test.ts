@@ -1,5 +1,4 @@
-import { describe, expect, test } from "vitest";
-
+import { describe, expect, test } from "bun:test";
 import { zCoerceBigint } from "./zCoerceBigint.js"; // Assuming this is the correct import path
 
 describe("zCoerceBigint", () => {
@@ -18,7 +17,7 @@ describe("zCoerceBigint", () => {
   test("null or empty strings", () => {
     expect(zCoerceBigint.parse("")).toEqual(0n);
     expect(() => zCoerceBigint.parse(null)).toThrowError(
-      /Expected bigint, received null/,
+      /expected bigint, received null/,
     );
   });
 });

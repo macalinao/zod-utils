@@ -2,6 +2,8 @@
 
 A collection of TypeScript utilities for [Zod](https://zod.dev/).
 
+Now updated for Zod v4.
+
 ## Packages
 
 - [zod-extra](https://github.com/macalinao/zod-utils/tree/main/packages/zod-extra) - Various Zod schemas and utilities with zero dependencies.

@@ -45,3 +45,10 @@ dist/
 fixtures/
 
 docs/
+
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv

@@ -1,5 +1,4 @@
 import type { z } from "zod";
-
 import { zNonEmptyString } from "./zNonEmptyString.js";
 
 /**

@@ -1,5 +1,4 @@
-import { describe, expect, it } from "vitest";
-
+import { describe, expect, it } from "bun:test";
 import { makeIDSchemas } from "./zPrefixedId.js";
 
 describe("zPrefixedId", () => {

@@ -1,6 +1,5 @@
-import { describe, expect, it } from "vitest";
-import { z } from "zod";
-
+import { describe, expect, it } from "bun:test";
+import * as z from "zod";
 import { parseArrayWithSchema } from "./parseArrayWithSchema.js";
 
 describe("parseArrayWithSchema", () => {
@@ -44,7 +43,7 @@ describe("parseArrayWithSchema", () => {
 
     const result = parseArrayWithSchema(schema, input);
 
-    expect(result).toEqual(input); // Assuming the function returns the input if valid
+    expect(result as unknown[]).toEqual(input); // Assuming the function returns the input if valid
   });
 
   // Add more test cases as needed based on the function's expected behavior
